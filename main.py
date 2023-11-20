@@ -34,40 +34,16 @@ def create_colour_list(pixels: List[List[Pixel]]) -> List[List[int]]:
         output.append(cur_row)
     return output
 
-
+# TODO: IMPLEMENT move()
+# Moves in a given direction in the image
 def move(direction: str, cur_pixel: Pixel, image: List[List[Pixel]]) -> Pixel or None:
-    image_height = len(image) - 1
-    image_width = len(image[0]) - 1
-    if direction == "LEFT":
-        return None if cur_pixel.x - 1 < 0 else image[cur_pixel.y][cur_pixel.x - 1]
-    elif direction == "RIGHT":
-        return None if cur_pixel.x + 1 > image_width else image[cur_pixel.y][cur_pixel.x + 1]
-    elif direction == "UP":
-        return None if cur_pixel.y - 1 < 0 else image[cur_pixel.y - 1][cur_pixel.x]
-    elif direction == "DOWN":
-        return None if cur_pixel.y + 1 > image_height else image[cur_pixel.y + 1][cur_pixel.x]
-    else:
-        return None
+    pass
 
 
+# TODO: IMPLEMENT search()
+# Searches image for all reachable areas from starting coordinates x, y.
 def search(x: int, y: int, image: List[List[Pixel]]) -> List[List[Pixel]]:
-    directions = ["LEFT", "UP", "RIGHT", "DOWN"]
-    start_pixel = image[y][x]
-    stack: List[Pixel] = [start_pixel]
-
-    while stack:
-        curPixel = stack.pop()
-        curPixel.checked = True
-        for direction in directions:
-            nextPixel = move(direction, curPixel, image)
-            if nextPixel is not None:
-                if not nextPixel.checked:
-                    if curPixel.same_colour(nextPixel):
-                        stack.append(nextPixel)
-
-        curPixel.set_colour(PURPLE)
-
-    return image
+    pass
 
 
 def write_image_from_array(array: numpy.array, outfile: str):
