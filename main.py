@@ -8,6 +8,8 @@ RED = 0
 GREEN = 1
 BLUE = 2
 
+PURPLE = [157, 66, 137]
+
 
 def create_pixel_list(array: numpy.ndarray) -> List[List[Pixel]]:
     array = list(array)
@@ -63,7 +65,7 @@ def search(x: int, y: int, image: List[List[Pixel]]) -> List[List[Pixel]]:
                     if curPixel.same_colour(nextPixel):
                         stack.append(nextPixel)
 
-        curPixel.set_colour([157, 66, 137])
+        curPixel.set_colour(PURPLE)
 
     return image
 
