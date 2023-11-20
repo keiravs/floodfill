@@ -40,9 +40,9 @@ def move(direction: str, cur_pixel: Pixel, image: List[List[Pixel]]) -> Pixel or
     pass
 
 
-# TODO: IMPLEMENT search()
+# TODO: IMPLEMENT find_connected_region()
 # Searches image for all reachable areas from starting coordinates x, y.
-def search(x: int, y: int, image: List[List[Pixel]]) -> List[List[Pixel]]:
+def find_connected_region(x: int, y: int, image: List[List[Pixel]]) -> List[List[Pixel]]:
     pass
 
 
@@ -68,7 +68,7 @@ def main():
 
     # Get new image array
     print("Searching...")
-    output_image_pixel_array = search(start_x, start_y, image_as_pixel_array)
+    output_image_pixel_array = find_connected_region(start_x, start_y, image_as_pixel_array)
 
     print("Converting back to colour array...")
     # Convert array of pixels back to list of lists
